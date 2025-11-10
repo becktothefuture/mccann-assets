@@ -200,18 +200,37 @@ body.preloader-active {
 }
 
 /* TruthWellTold signet */
+@keyframes preloader-pulse {
+  0%,
+  100% {
+    opacity: var(--pulse-min-opacity, 0.4);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 .preloader__signet {
+  --pulse-duration: 1s;
+  --pulse-min-opacity: 0.4;
   min-height: 10vh;
   min-width: 10vh;
   height: 10vh;
   width: auto;
   color: currentColor; /* SVG inherits text color */
-  opacity: var(--pulse-opacity, 1);
   will-change: opacity;
+  animation: preloader-pulse var(--pulse-duration) ease-in-out infinite;
   
   /* GPU acceleration for smooth pulse */
   transform: translateZ(0);
   backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader__signet {
+    animation: none;
+    opacity: 1;
+  }
 }
 
 /* SVG rendering optimizations */
