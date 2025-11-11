@@ -72,6 +72,15 @@ svg {
 .slide { contain: layout paint; }
 
 /* ============================================================
+   Navigation Styles
+   ============================================================ */
+
+/* When nav-bar has is-light class, make nav__background transparent */
+.nav-bar.is-light > .nav__background {
+  background: transparent;
+}
+
+/* ============================================================
    Lightbox Slide States
    ============================================================ */
 
