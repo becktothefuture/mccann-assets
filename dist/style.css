@@ -69,7 +69,10 @@ svg {
    Layout & Utilities
    ============================================================ */
 
-.slide { contain: layout paint; }
+.slide { 
+  contain: layout paint; 
+  cursor: pointer;
+}
 
 /* ============================================================
    Navigation Styles
